@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Storage</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Certificate Storage</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#upload">Upload Certificate</a>
+          </li>
+          <!-- Add more links for different certificates -->
+          <li class="nav-item">
+            <a class="nav-link" href="#certificate1">Certificate 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#certificate2">Certificate 2</a>
+          </li>
+          <!-- Add more links as needed -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4" id="upload">
+    <h2>Upload Certificate</h2>
+    <form id="certificateForm">
+      <div class="form-group">
+        <label for="courseName">Course Name</label>
+        <input type="text" class="form-control" id="courseName" placeholder="Enter course name">
+      </div>
+      <div class="form-group">
+        <label for="certificateFile">Upload Certificate</label>
+        <input type="file" class="form-control-file" id="certificateFile">
+      </div>
+      <button type="button" class="btn btn-primary" onclick="uploadCertificate()">Upload</button>
+    </form>
+  </div>
+
+  <!-- Add sections for displaying certificates -->
+  <div class="container mt-4" id="certificate1">
+    <h2>Certificate 1</h2>
+    <!-- Display certificate 1 here -->
+  </div>
+
+  <div class="container mt-4" id="certificate2">
+    <h2>Certificate 2</h2>
+    <!-- Display certificate 2 here -->
+  </div>
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function uploadCertificate() {
+      var courseName = document.getElementById('courseName').value;
+      var certificateFile = document.getElementById('certificateFile').files[0];
+      if (courseName && certificateFile) {
+        // Implement certificate upload functionality here
+        console.log('Uploading certificate for course: ' + courseName);
+        console.log('File: ' + certificateFile.name);
+      } else {
+        alert('Please enter a course name and select a file to upload.');
+      }
+    }
+  </script>
+</body>
+</html>
